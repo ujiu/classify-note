@@ -6,8 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的笔记</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="./src/index.js" defer></script>
   </head>
   <body>
-    Hello, World!
+    <h1>关于</h1>
+    <p>分类汇总</p>
+
+    <h2>Dark Mode</h2>
+    <p style="display: flex; align-items: center">
+      <label for="darkMode">dark mode：</label>
+      <input type="checkbox" id="darkMode" />
+    </p>
+
+    <script>
+      const el = document.getElementById('darkMode')
+
+      const { darkMode } = localStorage
+      const isDarkMode = Boolean(Number(darkMode))
+      if (isDarkMode) {
+        document.body.style.cssText = `
+            background-color: #222;
+            color: #fff;
+          `
+        document.getElementById('darkMode').checked = true
+      }
+
+      el.addEventListener('change', e => {
+        if (e.target.checked) {
+          localStorage.darkMode = 1
+          document.body.style.cssText = `
+            background-color: #222;
+            color: #fff;
+          `
+        } else {
+          localStorage.darkMode = 0
+          document.body.style.cssText = `
+            background-color: #fff;
+            color: #222;
+          `
+        }
+      })
+    </script>
+
+    <h2>操作备忘</h2>
+    <ol>
+      <li>
+        尖括号：
+        <code ab>* ab</code>
+        ...
+        <code ab>/*</code>
+      </li>
+
+      <li>
+        代码块：
+        <code ab>script src</code>
+        ...
+        <code ab>/script</code>
+      </li>
+    </ol>
   </body>
 </html>

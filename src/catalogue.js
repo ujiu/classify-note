@@ -50,4 +50,4 @@ function createCataloguePanel(titles) {
 }
 
 const nodes = sortTag()
-// createCataloguePanel(nodes)
+createCataloguePanel(nodes)
