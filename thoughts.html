@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="ico" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>我的笔记</title>
+  </head>
+  <body>
+    <p>OK，重新开始吧，现在在这里写东西，记录自己的思考过程。</p>
+    <p style="display: flex; align-items: center">
+      <label for="darkMode">夜间模式：</label>
+      <input type="checkbox" id="darkMode" />
+    </p>
+
+    <script>
+      const el = document.getElementById('darkMode')
+
+      const { darkMode } = localStorage
+      const isDarkMode = Boolean(Number(darkMode))
+      if (isDarkMode) {
+        document.body.style.cssText = `
+            background-color: #222;
+            color: #fff;
+          `
+        document.getElementById('darkMode').checked = true
+      }
+
+      el.addEventListener('change', e => {
+        if (e.target.checked) {
+          localStorage.darkMode = 1
+          document.body.style.cssText = `
+            background-color: #222;
+            color: #fff;
+          `
+        } else {
+          localStorage.darkMode = 0
+          document.body.style.cssText = `
+            background-color: #fff;
+            color: #222;
+          `
+        }
+      })
+    </script>
+    <p>现在是：<i id="nowTime"></i></p>
+    <script>
+      ;(function (id) {
+        const el = document.getElementById(id)
+        el.innerHTML = new Date().toLocaleString()
+      })('nowTime')
+    </script>
+
+    <p>
+      现在是：2022/4/20
+      09:21:23，我又重新启程啦，之前也有过类似的想法和行动，就是将自己的学习和生活经过记录下来，供后面整理使用。
+      现在我又发现，其实并没有必要纠结于以后用，其实只要一直写下去就好啦~，这个过程中就能有许多的收获。能够让你的思维更加的清晰。
+    </p>
+
+    <p>
+      和知识整理不同，这份笔记更像是“碎碎念”，想到什么就写什么，杂乱无章。
+      想想自己仅有的坚持下去的事情，真的屈指可数。所以我真心希望自己可以坚持下去。这样久而久之才能有所收获。
+    </p>
+
+    <p>
+      坚持读书，坚持学习和思考。
+      <strong style="color: tomato"> 把书读厚，再读薄。 </strong>
+      才能有所成。
+    </p>
+
+    <p>
+      现在是：2022/4/20 09:33:04，回想昨天的工作，我明白了一件事情，store
+      要用就全用，然后各个模块之间不用将状态传过去传过来，模块内部只需要关注“我想要什么？”这个问题即可。
+      因为所有公用的状态都放在 store
+      中，想要什么就直接去取得就行了，不必经过层层上传和下达去获取，很麻烦，也没必要。
+    </p>
+
+    <p>
+      2022/04/20 19:48;
+      刚才有点奇怪，我写得一个文件，莫名其妙还原成了一开始的情况，我自己确定没有撤回，感觉像时间回退了一样，记忆尤深。。
+    </p>
+  </body>
+</html>

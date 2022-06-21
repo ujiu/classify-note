@@ -1,0 +1,36 @@
+html {
+  font-family: Consolas;
+}
+body {
+  font-size: 12px;
+  /* width: 800px;
+  margin: 0 auto; */
+}
+
+/* 展示用的代码片段 */
+.code {
+  display: block;
+}
+
+.catalogue {
+  position: fixed;
+  padding-right: 40px;
+  user-select: none;
+  min-width: 200px;
+  top: 20px;
+  right: 20px;
+  border: 1px solid #ccc;
+}
+.catalogue ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 650px) {
+  .catalogue {
+    position: static;
+    border: none;
+  }
+  .catalogue ul {
+    padding: 0;
+  }
+}
